@@ -6,5 +6,5 @@ setup(name='openshift-scrapy',
       author='Ariel Scarpinelli',
       author_email='triforcexp AT gmail',
       url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['Scrapy', 'Scrapyd'],
+      install_requires=['Scrapy', 'Scrapyd', 'service_identity'],
      )
