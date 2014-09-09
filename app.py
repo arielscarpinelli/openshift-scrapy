@@ -20,10 +20,10 @@ if __name__ == '__main__':
     'items_dir': data_dir + 'items'
   }
 
-  scrapyd_conf = "[scrapyd]\n" +
+  scrapyd_conf = "[scrapyd]\n" + \
     "\n".join('{}={}'.format(key, val) for key, val in config_values.items())
   
-  config = Config(extra_sources=[StringIO(scrapyd_conf)]
+  config = Config(extra_sources=[StringIO(scrapyd_conf)])
   application = get_application(config)
   app.startApplication(application, False)
   reactor.run()
