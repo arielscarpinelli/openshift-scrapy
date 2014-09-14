@@ -11,9 +11,9 @@ setup(name='openshift-scrapy',
       install_requires=[
         'Scrapy',
         'service_identity', 
-        'Scrapyd==1.0.2',
+        'Scrapyd',
       ],
       dependency_links=[
-        'git+https://github.com/scrapy/scrapyd.git#egg=Scrapyd-1.0.2'
+        'git+https://github.com/scrapy/scrapyd.git#egg=Scrapyd'
       ]
      )
