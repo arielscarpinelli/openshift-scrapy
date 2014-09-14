@@ -8,12 +8,10 @@ setup(name='openshift-scrapy',
       url='http://www.python.org/sigs/distutils-sig/',
       # Will need to use Scrapyd's git location until a version is published
       # containing this fix: https://github.com/scrapy/scrapyd/issues/49 (probably 1.0.2)
+      # and to do it so, we specify it in requirements.txt to force version override
       install_requires=[
         'Scrapy',
         'service_identity', 
-        'Scrapyd',
+        #'Scrapyd>1.0.1',
       ],
-      dependency_links=[
-        'git+https://github.com/scrapy/scrapyd.git#egg=Scrapyd'
-      ]
      )
