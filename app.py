@@ -1,12 +1,5 @@
 import os
 
-from cStringIO import StringIO
-from scrapyd import get_application
-from twisted.internet import reactor
-from twisted.application import app
-from scrapyd.config import Config
-
-
 if __name__ == '__main__':
 
   data_dir = os.environ['OPENSHIFT_DATA_DIR']
@@ -22,8 +15,8 @@ if __name__ == '__main__':
 
   scrapyd_conf = "[scrapyd]\n" + \
     "\n".join('{}={}'.format(key, val) for key, val in config_values.items())
-  
-  config = Config(extra_sources=[StringIO(scrapyd_conf)])
-  application = get_application(config)
-  app.startApplication(application, False)
-  reactor.run()
+ 
+  with open('scrapyd.conf', 'w') as f:
+    f.write(scrapyd_conf)
+
+  os.system("scrapyd") 
